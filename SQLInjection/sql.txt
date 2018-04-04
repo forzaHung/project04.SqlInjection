@@ -1,0 +1,15 @@
+﻿create database SQLInjection
+
+use [SQLInjection]
+create table Member
+(
+	ID int identity primary key,
+	UserName nvarchar(50),
+	[Password] nvarchar(50)
+)
+insert into Member(UserName, Password) values('tuanitpro','123456')
+insert into Member(UserName, Password) values('admin','admin')
+
+select * from member
+
+Select top 1 * from Member where UserName = ''OR '1'='1' AND password = ''OR '1'='1'
